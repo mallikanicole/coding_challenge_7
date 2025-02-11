@@ -1,0 +1,1 @@
+This challenge focuses on mastering function declarations, function expressions, arrow functions, closures, and recursion.
