@@ -21,11 +21,11 @@ console.log(`Hourly Wage:$${calculateHourlyWage(75000, 35).toFixed(2)}`); // Exp
 
 const calculateLoyaltyDiscount=(amount, years) => {
     let loyaltyDiscount=0;
-    if ( years>=5) loyaltyDiscount= amount* 0.15;
-    else if (5>years>=3) loyaltyDiscount= amount* 0.10;
-    else if ( years<3) loyaltyDiscount= amount* 0.05;
-    console.log(`Discounted Price:$${(amount-loyaltyDiscount).toFixed(2)}`);
-}
+    if ( years>=5) loyaltyDiscount= amount* 0.15;//discount for over 5 years=15%
+    else if (5>years>=3) loyaltyDiscount= amount* 0.10;//discount for 3-5 years=10%
+    else if ( years<3) loyaltyDiscount= amount* 0.05;//discount for under 3 years=5%
+    console.log(`Discounted Price:$${(amount-loyaltyDiscount).toFixed(2)}`);//log discounted price
+}//function to calculate loyalty discount
 
 calculateLoyaltyDiscount(100, 6); // Expected output: "Discounted Price: $85.00"
 calculateLoyaltyDiscount(200, 2); // Expected output: "Discounted Price: $190.00"
