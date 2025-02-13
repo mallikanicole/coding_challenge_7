@@ -21,11 +21,21 @@ console.log(`Hourly Wage:$${calculateHourlyWage(75000, 35).toFixed(2)}`); // Exp
 
 const calculateLoyaltyDiscount=(amount, years) => {
     let loyaltyDiscount=0;
-    if (years=> years>=5) discount= amount*0.15;
-    else if (years=> 5>years>=3) discount= amount*0.10;
-    else if (years=> years<3) discount= amount*0.05
+    if ( years>=5) loyaltyDiscount= amount* 0.15;
+    else if (5>years>=3) loyaltyDiscount= amount* 0.10;
+    else if ( years<3) loyaltyDiscount= amount* 0.05;
+    console.log(`Discounted Price:$${(amount-loyaltyDiscount).toFixed(2)}`);
 }
 
-console.log(`Discounted Price:$${calculateLoyaltyDiscount(100, 6)}`); // Expected output: "Discounted Price: $85.00"
-console.log(`Discounted Price:$${calculateLoyaltyDiscount(200, 2)}`); // Expected output: "Discounted Price: $190.00"
+calculateLoyaltyDiscount(100, 6); // Expected output: "Discounted Price: $85.00"
+calculateLoyaltyDiscount(200, 2); // Expected output: "Discounted Price: $190.00"
 
+
+//Task 4  Parameters and Arguments 
+
+function calculateShippingCost(weight, location, expedited = false){
+    let weight={"USA":5+.05*weight, "Canada":10+.07*weight}
+}
+
+calculateShippingCost(10, "USA", true); // Expected output: "Shipping Cost: $20.00"
+calculateShippingCost(5, "Canada", false); // Expected output: "Shipping Cost: $13.50"
