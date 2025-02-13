@@ -17,6 +17,7 @@ function calculateHourlyWage(salary, hoursPerWeek){
 console.log(`Hourly Wage:$${calculateHourlyWage(52000, 40).toFixed(2)}`); // Expected output: "Hourly Wage: $25.00"
 console.log(`Hourly Wage:$${calculateHourlyWage(75000, 35).toFixed(2)}`); // Expected output: "Hourly Wage: $41.21"
 
+//Task 3 Arrow Function
 
 
 
