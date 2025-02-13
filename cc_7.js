@@ -19,5 +19,13 @@ console.log(`Hourly Wage:$${calculateHourlyWage(75000, 35).toFixed(2)}`); // Exp
 
 //Task 3 Arrow Function
 
+const calculateLoyaltyDiscount=(amount, years) => {
+    let loyaltyDiscount=0;
+    if (years=> years>=5) discount= amount*0.15;
+    else if (years=> 5>years>=3) discount= amount*0.10;
+    else if (years=> years<3) discount= amount*0.05
+}
 
+console.log(`Discounted Price:$${calculateLoyaltyDiscount(100, 6)}`); // Expected output: "Discounted Price: $85.00"
+console.log(`Discounted Price:$${calculateLoyaltyDiscount(200, 2)}`); // Expected output: "Discounted Price: $190.00"
 
