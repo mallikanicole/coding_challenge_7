@@ -34,23 +34,12 @@ calculateLoyaltyDiscount(200, 2); // Expected output: "Discounted Price: $190.00
 //Task 4  Parameters and Arguments 
 
 function calculateShippingCost(weight, location, expedited = false){
-    let locationL={"USA":(5+(.5*weight)),"Canada":(10+(.7*weight))}
-    let expeditedL={true:10,false:0}
-    let totalcostt=locationL[location]+expeditedL[expedited]
-    console.log(totalcostt)
-}
-
-calculateShippingCost(10, "USA", true); // Expected output: "Shipping Cost: $20.00"
-calculateShippingCost(5, "Canada", false); // Expected output: "Shipping Cost: $13.50"
-
-
-function calculateShippingCost(weight, location, expedited =false ){
-    let weightedCost={"USA":.5*weight,"Canada":.7*weight};
-    let locationCost={"USA":5,"Canada":10};
-    let expeditedCost={true:10,false:0};
-    let totalShippingCost=(weightedCost[weight]+locationCost[location]+expeditedCost[expedited]).toFixed(2);
+    let locationCost={"USA":(5+(.5*weight)),"Canada":(10+(.7*weight))}
+    let expeditedCost={true:10,false:0}
+    let totalShippingCost=(locationCost[location]+expeditedCost[expedited]).toFixed(2)
     console.log(`Shipping Cost:$${totalShippingCost}`)
 }
 
 calculateShippingCost(10, "USA", true); // Expected output: "Shipping Cost: $20.00"
 calculateShippingCost(5, "Canada", false); // Expected output: "Shipping Cost: $13.50"
+
