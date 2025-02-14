@@ -84,3 +84,14 @@ function createBudgetTracker(){
 let budget = createBudgetTracker();
 console.log(budget(300)); // Expected output: "Current Balance: -$300"
 console.log(budget(200)); // Expected output: "Current Balance: -$500"
+
+//Task 8 Recursion in Javascript
+
+function calculateGrowth(years, revenue){
+    if(years>=10) return 0;
+    return 2+calculateGrowth*(revenue*.05);
+};
+console.log(`Projected Revenue:$${calculateGrowth(8, 1000)}`); // Expected output: "Projected Revenue: $1102.50"
+console.log(`Projected Revenue:$${calculateGrowth(5, 5000)}`); // Expected output: "Projected Revenue: $6381.41"
+
+//figure out how to write fnction revenue*.05+revenue=new revenue*.05+revenue=1102.5
