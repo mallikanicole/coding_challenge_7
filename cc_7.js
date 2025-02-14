@@ -54,8 +54,21 @@ calculateLoanInterest(5000, 0.07, 5); // Expected output: "Total Interest: $1750
 
 //Task 6 Higher-Order Functions
 
-let transactions = [500, 1200, 3000, 800, 2200]
+function filterHighValueTransactions(transactions, filterFunction){
+    let highValueTransactions=transactions.map(filterFunction);
+    console.log(`High Value Transactions:${highValueTransactions}`);
+};
+let transactions = [500, 1200, 3000, 800, 2200];
+filterHighValueTransactions(transactions, amount => amount > 1000);
+// Expected output: [1200, 3000, 2200]
 
 function filterHighValueTransactions(transactions, filterFunction){
+    let highValueTransactions=transactions.map(filterFunction);
+    console.log(`High Value Transactions:${highValueTransactions}`);
+};
+let transactions = [500, 1200, 3000, 800, 2200];
+filterHighValueTransactions(transactions, amount => amount > 1000 ? amount: amount>1000);
+// Expected output: [1200, 3000, 2200]
 
-}
+//need to get rid of false in output
+
