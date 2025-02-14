@@ -72,3 +72,15 @@ filterHighValueTransactions(transactions, amount => amount > 1000 ? amount: amou
 
 //need to get rid of false in output
 
+//Task 7 Closures
+
+function createBudgetTracker(){
+    let totalBudget=0;
+    return function(budget){
+        totalBudget+=budget;
+        return `Current Balance-:$${totalBudget}`;//log current balance
+    };//create function to track budget
+};//track running balance
+let budget = createBudgetTracker();
+console.log(budget(300)); // Expected output: "Current Balance: -$300"
+console.log(budget(200)); // Expected output: "Current Balance: -$500"
