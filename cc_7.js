@@ -82,11 +82,12 @@ console.log(budget(200)); // Expected output: "Current Balance: -$500"
 //Task 8 Recursion in Javascript
 
 function calculateGrowth(years, revenue){
-    if(years>10) return 0;
-    return calculateGrowth*(revenue*.05)+revenue;
-};
-console.log(`Projected Revenue:$${calculateGrowth(8, 1000)}`); // Expected output: "Projected Revenue: $1102.50"
-console.log(`Projected Revenue:$${calculateGrowth(5, 5000)}`); // Expected output: "Projected Revenue: $6381.41"
+    if(years>=10) return revenue;
+    return calculateGrowth(years+1,revenue*1.05);
+};//create function to calculate projected revenue
 
-//figure out how to write fnction revenue*.05+revenue=new revenue*.05+revenue=1102.5
+console.log(`Projected Revenue:$${calculateGrowth(8, 1000).toFixed(2)}`); // Expected output: "Projected Revenue: $1102.50"
+console.log(`Projected Revenue:$${calculateGrowth(5, 5000).toFixed(2)}`); // Expected output: "Projected Revenue: $6381.41"
+
+
 
