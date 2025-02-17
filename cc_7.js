@@ -54,23 +54,17 @@ calculateLoanInterest(5000, 0.07, 5); // Expected output: "Total Interest: $1750
 
 //Task 6 Higher-Order Functions
 
+let transactions =[500, 1200, 3000, 800, 2200];//declare transactions
 function filterHighValueTransactions(transactions, filterFunction){
-    let highValueTransactions=transactions.map(filterFunction);
-    console.log(`High Value Transactions:${highValueTransactions}`);
-};
-let transactions = [500, 1200, 3000, 800, 2200];
-filterHighValueTransactions(transactions, amount => amount > 1000);
+    return transactions.filter(filterFunction);
+}//create filter functiom
+let highValueTransactions=filterHighValueTransactions(transactions,transaction=>transaction>1000);//filter high value transactions
+
+console.log(`High Value Transactions:${highValueTransactions}`);//log high value transactions
+
 // Expected output: [1200, 3000, 2200]
 
-function filterHighValueTransactions(transactions, filterFunction){
-    let highValueTransactions=transactions.map(filterFunction);
-    console.log(`High Value Transactions:${highValueTransactions}`);
-};
-let transactions = [500, 1200, 3000, 800, 2200];
-filterHighValueTransactions(transactions, amount => amount > 1000 ? amount: amount>1000);
-// Expected output: [1200, 3000, 2200]
 
-//need to get rid of false in output
 
 //Task 7 Closures
 
@@ -88,10 +82,12 @@ console.log(budget(200)); // Expected output: "Current Balance: -$500"
 //Task 8 Recursion in Javascript
 
 function calculateGrowth(years, revenue){
-    if(years>=10) return 0;
-    return 2+calculateGrowth*(revenue*.05);
-};
-console.log(`Projected Revenue:$${calculateGrowth(8, 1000)}`); // Expected output: "Projected Revenue: $1102.50"
-console.log(`Projected Revenue:$${calculateGrowth(5, 5000)}`); // Expected output: "Projected Revenue: $6381.41"
+    if(years>=10) return revenue;
+    return calculateGrowth(years+1,revenue*1.05);
+};//create function to calculate projected revenue
 
-//figure out how to write fnction revenue*.05+revenue=new revenue*.05+revenue=1102.5
+console.log(`Projected Revenue:$${calculateGrowth(8, 1000).toFixed(2)}`); // Expected output: "Projected Revenue: $1102.50"
+console.log(`Projected Revenue:$${calculateGrowth(5, 5000).toFixed(2)}`); // Expected output: "Projected Revenue: $6381.41"
+
+
+
